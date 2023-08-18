@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		507AFEDC2A8EF10400FF18BF /* build */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 507AFEDD2A8EF10400FF18BF /* Build configuration list for PBXAggregateTarget "build" */;
+			buildPhases = (
+				507AFEE32A8EF11300FF18BF /* ShellScript */,
+			);
+			dependencies = (
+				507AFEE22A8EF10C00FF18BF /* PBXTargetDependency */,
+			);
+			name = build;
+			productName = build;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		9202554F1B14FD3B007E21E3 /* MoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202554E1B14FD3B007E21E3 /* MoCode.swift */; };
 		92175E8F1B14F3BD007151EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92175E8E1B14F3BD007151EA /* AppDelegate.swift */; };
@@ -49,6 +64,16 @@
 		92FB2D431B3A309900D7774A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 92FB2D421B3A309900D7774A /* Credits.rtf */; };
 		92FCC0161B2B4B6A00F4BF7E /* MoCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FCC0151B2B4B6A00F4BF7E /* MoCocoa.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		507AFEE12A8EF10C00FF18BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92175E811B14F3BD007151EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92175E881B14F3BD007151EA;
+			remoteInfo = Snk;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9294D15E1B38C74E0030C8D9 /* CopyFiles */ = {
@@ -250,6 +275,10 @@
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = mowglii.com;
 				TargetAttributes = {
+					507AFEDC2A8EF10400FF18BF = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+					};
 					92175E881B14F3BD007151EA = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = HFT3T55WND;
@@ -277,6 +306,7 @@
 			projectRoot = "";
 			targets = (
 				92175E881B14F3BD007151EA /* Snk */,
+				507AFEDC2A8EF10400FF18BF /* build */,
 			);
 		};
 /* End PBXProject section */
@@ -317,6 +347,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		507AFEE32A8EF11300FF18BF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Type a script or drag a script file from your workspace to insert its path.\nAPP_SOURCE_PATH=\"$BUILT_PRODUCTS_DIR/Snk.app\"\nDESTINATION_DIR=\"build\"\n\nrm -rf \"${PROJECT_DIR}/${DESTINATION_DIR}\"\n# Create the destination directory if it doesn't exist\nmkdir -p \"${PROJECT_DIR}/${DESTINATION_DIR}\"\n\n# Copy the app to the destination directory\nmv \"${APP_SOURCE_PATH}\" \"${PROJECT_DIR}/${DESTINATION_DIR}/Snk.app\"\n";
+		};
 		92FACE14225B09A200B9EB06 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +407,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		507AFEE22A8EF10C00FF18BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92175E881B14F3BD007151EA /* Snk */;
+			targetProxy = 507AFEE12A8EF10C00FF18BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		92175E921B14F3BD007151EA /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
@@ -372,6 +427,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		507AFEDE2A8EF10400FF18BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		507AFEDF2A8EF10400FF18BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		92175EA11B14F3BD007151EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -482,15 +553,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Ron Horne (HXNWFAM4DV)";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1021;
-				DEVELOPMENT_TEAM = HFT3T55WND;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Snk/_sparkle";
 				INFOPLIST_FILE = Snk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MARKETING_VERSION = 1.4.0;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mowglii.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Snk;
@@ -502,15 +576,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Ron Horne (HXNWFAM4DV)";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1021;
-				DEVELOPMENT_TEAM = HFT3T55WND;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Snk/_sparkle";
 				INFOPLIST_FILE = Snk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MARKETING_VERSION = 1.4.0;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mowglii.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Snk;
@@ -521,6 +598,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		507AFEDD2A8EF10400FF18BF /* Build configuration list for PBXAggregateTarget "build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507AFEDE2A8EF10400FF18BF /* Debug */,
+				507AFEDF2A8EF10400FF18BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92175E841B14F3BD007151EA /* Build configuration list for PBXProject "Snk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
